@@ -51,7 +51,7 @@
 
 - **Клонируйте репозиторий**
    ```bash
-   git clone https://github.com/ваш-логин/flask-inventory.git
+   git clone https://github.com/denisit1836-alt/flask-inventory.git
    cd flask-inventory
 
 ### Создайте виртуальное окружение
