@@ -58,10 +58,10 @@
 
 python -m venv venv
 
-# Активация:
-# Windows
+Активация:
+Windows
 venv\Scripts\activate
-# Linux / macOS
+Linux / macOS
 source venv/bin/activate
 
 ### Установите зависимости
