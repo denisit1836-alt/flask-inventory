@@ -25,38 +25,7 @@
 - Jinja2 — шаблонизатор
 - HTML5 / CSS — фронтенд (чистый, без фреймворков)
 - JavaScript — минимальный клиентский скрипт для автоподстановки цены
-
-## Структура проекта
-flask-inventory/
-├── README.md
-├── app.py
-├── requirements.txt
-├── models/
-│   ├── init.py
-│   ├── tables.py
-│   ├── repo.py
-│   └── user.py
-├── controllers/
-│   ├── init.py
-│   ├── tovar_controller.py
-│   ├── prodano_controller.py
-│   ├── services_controller.py
-│   └── auth_controller.py
-├── views/
-│   ├── index.html
-│   ├── list_tovar.html
-│   ├── list_prodano.html
-│   ├── list_services.html
-│   └── auth/
-│       ├── login.html
-│       └── register.html
-├── static/
-│   ├── tables-style.css
-│   ├── mainmenu-style.css
-│   └── login-style.css
-└── tests/
-├── init.py
-└── test_app.py
+- 
 ## Особенности
 
 - Автоматический расчёт стоимости в продажах (товар + услуга)
@@ -71,4 +40,5 @@ flask-inventory/
 - Учет остатков на складе
 - Экспорт в Excel
 - Отправка email при восстановлении пароля
+
 - Роли пользователей (админ / менеджер)
