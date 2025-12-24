@@ -1,0 +1,52 @@
+body {
+    font-family: system-ui, mr_NorwesterG, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    padding: 50px 20px; /* Меньше отступов, чем 100px, чтобы было комфортно */
+    background: #808080; /* Серый фон страницы */
+    min-height: 100vh;
+}
+
+.container-index {
+    max-width: 400px; /* Панель побольше */
+    width: 100%;
+    margin: 0 auto; /* Правильное центрирование */
+    background: white;
+    padding: 40px 30px; /* Больше внутреннего пространства */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Мягкая тень вместо фиолетовой */
+}
+
+h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Отступы между кнопками */
+    margin-top: 40px;
+}
+
+.func-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+    text-decoration: none;
+    background-color: #007bff; /* Синий цвет */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px; /* Закруглённые углы */
+    width: 300px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.func-button:hover {
+    background-color: #0056b3; /* Темнее при наведении */
+    transform: translateY(-2px); /* Лёгкий подъём при наведении */
+}
