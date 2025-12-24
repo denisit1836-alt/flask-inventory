@@ -56,34 +56,26 @@
 
 ### Создайте виртуальное окружение
 
-python -m venv venv
+- python -m venv venv
 
-Активация:
-
-Windows
-
-venv\Scripts\activate
-
-Linux / macOS
-
-source venv/bin/activate
+- venv\Scripts\activate
 
 ### Установите зависимости
 
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
 ### Настройте подключение к базе данных
 
-Откройте файл app.py и измените строку с подключением:
+- Откройте файл app.py и измените строку с подключением:
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://ваш_логин:ваш_пароль@localhost/имя_вашей_базы'
+- app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://ваш_логин:ваш_пароль@localhost/имя_вашей_базы'
 
 ### Запустите приложение
 
-python app.py
+- python app.py
 
-Откройте в браузере
+- Откройте в браузере
 
-Перейдите по адресу:
+- Перейдите по адресу:
 
-http://127.0.0.1:5000
+- http://127.0.0.1:5000
