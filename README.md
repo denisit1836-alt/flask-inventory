@@ -71,7 +71,7 @@
 
    ```bash
    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://ваш_логин:ваш_пароль@localhost/имя_вашей_базы'
-``
+   ```
 ### Запустите приложение
 
 - python app.py
@@ -81,3 +81,4 @@
 - Перейдите по адресу:
 
 - http://127.0.0.1:5000
+
