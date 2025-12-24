@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учет услуг</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='tables-style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Кнопка "Назад" -->
+        <a href="{{ url_for('index') }}" class="button-back">Назад</a>
+        <h1 style="text-align: center;">Учет услуг</h1>
+
+        <!-- Форма добавления новой услуги -->
+        <div class="form-add">
+            <h2>Добавить новую услугу</h2>
+            <form method="POST" action="{{ url_for('services.create_services') }}" autocomplete="off">
+                <div class="form-row">
+                    <label>Название услуги:</label>
+                    <input type="text" name="name" required class="text-field">
+                </div>
+                <div class="form-row">
+                    <label>Описание услуги:</label>
+                    <input type="text" name="opisan" required class="text-field">
+                </div>
+                <div class="form-row">
+                    <label>Цена:</label>
+                    <input type="text" name="cost" required class="text-field">
+                </div>
+                <div class="form-row" style="justify-content: center; margin-top: 20px;">
+                    <button type="submit" class="button-add">Добавить</button>
+                </div>
+            </form>
+        </div>
+
+        <hr>
+
+        <!-- Поиск по услугам -->
+        <div style="margin: 20px 0; text-align: center;">
+            <input type="text" id="search-input" placeholder="Поиск" class="text-field" style="width: 500px; max-width: 90%; padding: 12px; font-size: 16px;">
+            <button type="button" onclick="clearSearch()" class="button-clear">Очистить</button>
+        </div>
+
+        <!-- Существующие услуги -->
+        <h2>Услуги</h2>
+        <table class="all-table" id="services-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Название услуги</th>
+                    <th>Описание услуги</th>
+                    <th>Цена</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <form method="POST" action="{{ url_for('services.update_services', item_id=item.id) }}">
+                        <td style="text-align: center;">
+                            <input type="text" name="id" value="{{ item.id }}" disabled class="text-field" style="width: 50px;">
+                        </td>
+                        <td>
+                            <input type="text" name="name" value="{{ item.name }}" class="text-field">
+                        </td>
+                        <td>
+                            <input type="text" name="opisan" value="{{ item.opisan }}" class="text-field">
+                        </td>
+                        <td>
+                            <input type="text" name="cost" value="{{ item.cost }}" class="text-field">
+                        </td>
+                        <td style="text-align: center; white-space: nowrap;">
+                            <button type="submit" class="button-redact">Изменить</button>
+                            <button type="submit" formaction="{{ url_for('services.delete_services', item_id=item.id) }}" class="button-delete">X</button>
+                        </td>
+                    </form>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- JavaScript для поиска по услугам -->
+    <script>
+        function performSearch() {
+            const input = document.getElementById('search-input');
+            const filter = input.value.toLowerCase().trim();
+            const table = document.getElementById('services-table');
+            const rows = table.querySelectorAll('tbody tr');
+
+            rows.forEach(row => {
+                const inputs = row.querySelectorAll('input[type="text"]');
+                let match = false;
+
+                inputs.forEach(field => {
+                    if (field.value.toLowerCase().includes(filter)) {
+                        match = true;
+                    }
+                });
+
+                row.style.display = match ? '' : 'none';
+            });
+        }
+
+        function clearSearch() {
+            document.getElementById('search-input').value = '';
+            performSearch();
+        }
+
+        // Поиск в реальном времени при вводе текста
+        document.getElementById('search-input').addEventListener('keyup', performSearch);
+
+        // Обновление поиска при редактировании полей
+        document.querySelectorAll('tbody input').forEach(input => {
+            input.addEventListener('input', performSearch);
+        });
+
+        // При загрузке страницы — показываем все записи
+        document.addEventListener('DOMContentLoaded', function() {
+            performSearch();
+        });
+    </script>
+</body>
+</html>
