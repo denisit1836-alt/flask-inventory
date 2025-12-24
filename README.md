@@ -55,21 +55,23 @@
    cd flask-inventory
 
 ### Создайте виртуальное окружение
+   ```bash
+   python -m venv venv
 
-- python -m venv venv
-
-- venv\Scripts\activate
-
+   venv\Scripts\activate
+```
 ### Установите зависимости
 
-- pip install -r requirements.txt
-
+   ```bash
+   pip install -r requirements.txt
+```
 ### Настройте подключение к базе данных
 
 - Откройте файл app.py и измените строку с подключением:
 
-- app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://ваш_логин:ваш_пароль@localhost/имя_вашей_базы'
-
+   ```bash
+   app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://ваш_логин:ваш_пароль@localhost/имя_вашей_базы'
+``
 ### Запустите приложение
 
 - python app.py
