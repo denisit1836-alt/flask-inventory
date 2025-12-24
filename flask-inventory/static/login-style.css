@@ -1,0 +1,98 @@
+body {
+    font-family: system-ui, mr_NorwesterG, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: #808080; /* Серый фон, как на всех страницах */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container-login {
+    max-width: 400px;
+    width: 100%;
+    background: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Мягкая нейтральная тень */
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Сообщения об ошибках (flashed messages) */
+div[style*="color:darkorange"] {
+    color: darkorange;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+
+.form-group input {
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Кнопка "Войти" — точно как на главной странице */
+.func-button {
+    padding: 16px 24px;
+    background-color: #007bff; /* Синий */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: mr_NorwesterG, system-ui, Arial;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    margin-top: 10px;
+}
+
+.func-button:hover {
+    background-color: #0056b3; /* Темнее при наведении */
+    transform: translateY(-2px);
+}
+
+.register-link {
+    margin-top: 20px;
+    font-size: 15px;
+    color: #333;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.register-link a:hover {
+    color: #0056b3;
+}
